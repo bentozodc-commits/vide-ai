@@ -1,1 +1,107 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIDE AI - All-in-One AI Studio</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial,sans-serif}
+header{height:70px;border-bottom:1px solid #292929;display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:sticky;top:0;background:#101010;z-index:5}
+.logo{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:bold}
+.logo span{background:#ffda29;color:#111;padding:10px 13px;border-radius:12px}
+.credit{background:#252525;padding:10px 14px;border-radius:20px;color:#ffda29;font-size:13px}
+main{max-width:1100px;margin:auto;padding:35px 22px}
+.hero{background:linear-gradient(130deg,#27230f,#171717 65%);border:1px solid #51451c;border-radius:20px;padding:35px 25px;margin-bottom:30px}
+.hero small{color:#ffda29;letter-spacing:2px}
+h1{font-size:38px;margin:16px 0 10px}
+.hero p{color:#aaa;line-height:1.7}
+.section-title{font-size:21px;margin:30px 0 17px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.card{background:#171717;border:1px solid #303030;border-radius:16px;padding:20px;cursor:pointer;transition:.2s}
+.card:hover{border-color:#ffda29;transform:translateY(-3px)}
+.card .icon{font-size:30px}
+.card h3{margin:13px 0 7px}
+.card p{font-size:13px;color:#999;line-height:1.5}
+.tag{font-size:11px;color:#ffda29}
+.models{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.model{background:#171717;border:1px solid #303030;padding:15px;border-radius:12px}
+.model small{display:block;color:#999;margin-top:6px}
+button{background:#ffda29;color:#111;border:0;padding:13px 18px;border-radius:10px;font-weight:bold;cursor:pointer}
+footer{text-align:center;padding:30px;color:#777;border-top:1px solid #292929;font-size:12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}.models{grid-template-columns:repeat(4,1fr)}h1{font-size:52px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo"><span>V</span> VIDE AI</div>
+ <div class="credit">◈ 0 Credits</div>
+</header>
+<main>
+ <section class="hero">
+  <small>YOUR ALL-IN-ONE AI STUDIO</small>
+  <h1>Create. Imagine.<br><span style="color:#ffda29">Generate.</span></h1>
+  <p>Satu platform untuk membuat video dan gambar menggunakan berbagai teknologi AI.</p>
+  <button onclick="showPage('video')">Mulai Membuat →</button>
+ </section>
+
+ <h2 class="section-title">Creative Studio</h2>
+ <section class="grid">
+  <div class="card" onclick="showPage('video')">
+   <div class="icon">🎬</div><h3>Video Generator</h3>
+   <p>Buat video dari teks atau gambar menggunakan AI.</p>
+   <span class="tag">TEXT TO VIDEO · IMAGE TO VIDEO</span>
+  </div>
+  <div class="card" onclick="showPage('image')">
+   <div class="icon">🎨</div><h3>Image Generator</h3>
+   <p>Ciptakan gambar dengan berbagai model AI.</p>
+   <span class="tag">TEXT TO IMAGE</span>
+  </div>
+  <div class="card" onclick="showPage('models')">
+   <div class="icon">⚡</div><h3>All AI Models</h3>
+   <p>Pilih mesin AI sesuai kebutuhan produksi.</p>
+   <span class="tag">MULTI MODEL</span>
+  </div>
+  <div class="card" onclick="showPage('clipper')">
+   <div class="icon">✂️</div><h3>AI Clipper</h3>
+   <p>Persiapkan klip pendek dari video panjang.</p>
+   <span class="tag">VIDEO TO CLIPS</span>
+  </div>
+ </section>
+
+ <h2 class="section-title">Popular AI Models</h2>
+ <section class="models">
+  <div class="model">🎬 Seedance 2.5<small>AI Video · Premium</small></div>
+  <div class="model">🎥 Veo 3.1<small>AI Video</small></div>
+  <div class="model">🎞️ Kling 3.0<small>AI Video</small></div>
+  <div class="model">✨ MiniMax<small>AI Video</small></div>
+  <div class="model">🖼️ Nano Banana<small>AI Image</small></div>
+  <div class="model">🎨 GPT Image<small>AI Image</small></div>
+  <div class="model">🌌 Seedream 4.5<small>AI Image</small></div>
+  <div class="model">🚀 Grok Imagine<small>AI Image</small></div>
+ </section>
+
+ <section id="workspace" class="hero" style="margin-top:30px">
+  <small>VIDE AI WORKSPACE</small>
+  <h2 id="pageTitle">Selamat Datang</h2>
+  <p id="pageDesc">Pilih fitur di atas untuk memulai kreativitas Anda.</p>
+ </section>
+</main>
+<footer>© 2026 VIDE AI · All-in-One AI Studio</footer>
+<script>
+function showPage(page){
+ const data={
+ video:['Video Generator','Workspace pembuatan video AI. Integrasi API akan ditambahkan setelah pengujian provider.'],
+ image:['Image Generator','Workspace pembuatan gambar AI.'],
+ models:['All AI Models','Pilih model video dan gambar yang tersedia.'],
+ clipper:['AI Clipper','Workspace untuk pemrosesan video menjadi klip pendek.']
+ };
+ document.getElementById('pageTitle').textContent=data[page][0];
+ document.getElementById('pageDesc').textContent=data[page][1];
+ document.getElementById('workspace').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
+
